@@ -2,8 +2,8 @@ module.exports = {
 // For customer to enter info
     createRequest: function (req, res) {
         let params = [
-            req.body.firstName,
-            req.body.lastName,
+            req.body.firstname,
+            req.body.lastname,
             req.body.email,
             req.body.phone,
             req.body.dateOfEvent
@@ -39,8 +39,8 @@ module.exports = {
     // for admin to create new employee
     createUser: function (req, res) {
         let params = [
-            req.body.firstName,
-            req.body.lastName,
+            req.body.firstname,
+            req.body.lastname,
             req.body.email,
             req.body.phone
         ]

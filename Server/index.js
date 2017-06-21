@@ -23,6 +23,8 @@ massive({
 }).then(db => {
     app.set('db', db);
 
+//  These are my endpoints
+    
     app.post('/api/catering/submit-request', controller.createRequest)
     app.post('/api/catering/add-to-request', controller.addToRequests)
     app.post('/api/admin/create-user', controller.createUser)
@@ -30,10 +32,8 @@ massive({
     app.get('/api/catering/all-requests', controller.getAllRequests)
     app.get('/api/admin/all-employees', controller.getAllEmployees)
 
-    app.post('/api/test', (req, res, next)=> {
-        console.log(req.body)
-    })
-    // app.put('/api/admin/update-employee', controller.updateEmployee)
+   
+//  app.put('/api/admin/update-employee', controller.updateEmployee)
 
 
 
@@ -42,4 +42,6 @@ massive({
     app.listen(port, () => {
         console.log('Listening on port: ', port);
     })
+}).catch(err => {
+    console.log(err)
 })
