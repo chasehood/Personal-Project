@@ -23,17 +23,18 @@ massive({
 }).then(db => {
     app.set('db', db);
 
-//  These are my endpoints
-    
+    //  These are my endpoints
+
     app.post('/api/catering/submit-request', controller.createRequest)
     app.post('/api/catering/add-to-request', controller.addToRequests)
     app.post('/api/admin/create-user', controller.createUser)
     app.post('/api/admin/add-to-employee', controller.addToEmployee)
     app.get('/api/catering/all-requests', controller.getAllRequests)
     app.get('/api/admin/all-employees', controller.getAllEmployees)
+    app.delete('/api/admin/remove-employee/:id', controller.removeEmployee)
+    app.delete('/api/admin/remove-request/:id', controller.removeRequest)
 
-   
-//  app.put('/api/admin/update-employee', controller.updateEmployee)
+    //  app.put('/api/admin/update-employee', controller.updateEmployee)
 
 
 
