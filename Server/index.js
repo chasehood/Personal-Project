@@ -5,6 +5,7 @@ const express = require('express'),
     massive = require('massive'),
     app = module.exports = express(),
     controller = require('./control')
+ 
 
 //===============
 
@@ -22,6 +23,26 @@ massive({
 
 }).then(db => {
     app.set('db', db);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     //  These are my endpoints
 
