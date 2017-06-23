@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="tacoShopSanMarcos">
+<head>
+    <link rel="stylesheet" href="views/reset.css">
+    <link rel="stylesheet" href="views/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div class='tacoshop'>
+    <h2 class='ts'>taco shop</h2>
+</div>         
+<div class='sanmarcos'>
+    <h1 class='sm'>SAN MARCOS</h1>
+</div>
+<div class='tabs'>
+    <!--<h1>HOME | MENÚ | CATERING</h1>-->
+    <h1 class='home'>HOME</h1>
+    <h1> | </h1>
+    <h1 class='menu'>MENU</h1>
+    <h1> | </h1>
+    <h1 class='catering'>CATERING</h1>
+
+</div>
+<ui-view></ui-view>
+
+<img src="../img/mexico.jpg" alt="">
+
+<!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8409.275166048992!2d-111.66819320052566!3d40.22821568816268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x874d97571a107b37%3A0xec3f71af5db63a17!2s!5e0!3m2!1sen!2sus!4v1498235246008"
+        height="400" style="border:0px; width:100%; "></iframe>-->
+
+
+
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.0/angular-ui-router.js"></script>
+  <script src="./app.js"></script>  
+  <script src="./js/mainSvc.js"></script>
+  <script src="./js/mainCtrl.js"></script>
+  <script src="./js/adminCtrl.js"></script>
+</body>
+</html>

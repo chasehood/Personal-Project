@@ -45,7 +45,9 @@ module.exports = {
             req.body.firstname,
             req.body.lastname,
             req.body.email,
-            req.body.phone
+            req.body.phone,
+            req.body.customerSoldTo,
+            req.body.dateOfSale
         ]
         req.app.get('db').employee_basic_info_post(params).then(function (response) {
             res.send('Employee added.' + response)
