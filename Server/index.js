@@ -5,15 +5,26 @@ const express = require('express'),
     massive = require('massive'),
     app = module.exports = express(),
     controller = require('./control')
- 
+    passport = require('passport'),
+    Auth0Strategy = require('passport-auth0');
 
-//===============
+//these are the middlewares
 
 app.use(express.static(`${__dirname}./../app`));
 app.use(bodyParser.json());
 app.use(cors());
+app.use(passport.initialize())
+app.use(passport.session())
+// app.use(session({secret: '1qaz2wsx3edc4rfv5tgb'}))
 
-
+// passport.use(new Auth0Strategy({
+//   domain: '<chasehood.auth0.com>',
+//   clientID: '<m1jnXI34oXhuDOQovCLkdRO6SfZSlqUI>',
+//   clientSecret: '<5s7aENgh1DZXJdAjCkGks4eC1F4HhLxGWLLC9AcVZVfstDYVIGCM-wXYgJKSuBID>',
+//   callbackURL: 'http://localhost:3000/auth/callback'
+// }, function(accessToken, refreshToken, extraParams, profile, done) {
+//   return done(null, profile);
+// }));
 
 massive({
     host: 'localhost',
@@ -23,26 +34,6 @@ massive({
 
 }).then(db => {
     app.set('db', db);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     //  These are my endpoints
 
@@ -56,9 +47,6 @@ massive({
     app.delete('/api/admin/remove-request/:id', controller.removeRequest)
 
     //  app.put('/api/admin/update-employee', controller.updateEmployee)
-
-
-
 
     const port = 3000;
     app.listen(port, () => {
