@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="tacoShopSanMarcos">
+
 <head>
     <link rel="stylesheet" href="views/reset.css">
     <link rel="stylesheet" href="views/style.css">
@@ -8,36 +9,43 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
-<div class='tacoshop'>
-    <h2 class='ts'>taco shop</h2>
-</div>         
-<div class='sanmarcos'>
-    <h1 class='sm'>SAN MARCOS</h1>
-</div>
-<div class='tabs'>
-    <!--<h1>HOME | MENÚ | CATERING</h1>-->
-    <h1 class='home'>HOME</h1>
-    <h1> | </h1>
-    <h1 class='menu'>MENÚ</h1>
-    <h1> | </h1>
-    <h1 class='catering'>CATERING</h1>
+    <div class='tacoshop'>
+        <h2 class='ts'>taquria</h2>
+    </div>
+    <div class='sanmarcos'>
+        <h1 class='sm'>SAN MARCOS</h1>
+    </div>
+    <div class='tabs'>
+        <!--<h1>HOME | MENÚ | CATERING</h1>-->
+        <h1>
+            <a ui-sref='home'>HOME</a>
+             | 
+            <a ui-sref='menu'>MENÚ</a>
+             | 
+            <a ui-sref='catering'>CATERING</a>
+        </h1>
 
-</div>
-<ui-view></ui-view>
+    </div>
+    
+    <ui-view></ui-view>
 
-<img src="../img/mexico.jpg" alt="">
+    <img class="skyline" src="../img/mexico.jpg" alt="">
 
-<!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8409.275166048992!2d-111.66819320052566!3d40.22821568816268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x874d97571a107b37%3A0xec3f71af5db63a17!2s!5e0!3m2!1sen!2sus!4v1498235246008"
-        height="400" style="border:0px; width:100%; "></iframe>-->
+    <div class="weather" ng-click='recWeather()'>{{weath in weather}}</div>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3046.1841073521623!2d-111.66425078460986!3d40.22720857938762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x874d97571a12bebb%3A0x28c53da605a991f!2sTaqueria+San+Marcos!5e0!3m2!1sen!2sus!4v1498585705621"
+        height="400" style="border:0px; width:100%; "></iframe>
 
 
 
- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.0/angular-ui-router.js"></script>
-  <script src="./app.js"></script>  
-  <script src="./js/mainSvc.js"></script>
-  <script src="./js/mainCtrl.js"></script>
-  <script src="./js/adminCtrl.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.0/angular-ui-router.js"></script>
+    <script src="./app.js"></script>
+    <script src="./js/mainSvc.js"></script>
+    <script src="./js/mainCtrl.js"></script>
+    <script src="./js/adminCtrl.js"></script>
 </body>
+
 </html>

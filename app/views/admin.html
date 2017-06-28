@@ -7,58 +7,63 @@
         <button type="submit">add employee</button>
     </form>
 </section>
+<div class="wrapper">
+    <table class="table">
+        <tr>
+            <div class="employee" <p>employee</p>
+            </div>
+            <th>Firstname
+            </th>
+            <th>Lastname
+            </th>
+            <th>Email
+            </th>
+            <th>Phone
+            </th>
+        </tr>
+        <tr ng-repeat="employee in employees">
+            <td>{{employee.firstname}}
+            </td>
+            <td>{{employee.lastname}}
+            </td>
+            <td>{{employee.email}}
+            </td>
+            <td>{{employee.phone}}
+            </td>
+            <td>
+                <input type="button" value="Remove" class="btn btn-primary" ng-click="removeEmployee(employee.id)" />
+            </td>
+        </tr>
+    </table>
 
-<table class="table">
-    <tr>
-        <th class='name'>First Name
-        </th>
-        <th>Last Name
-        </th>
-        <th>Email
-        </th>
-        <th>Phone
-        </th>
-    </tr>
-    <tr ng-repeat="employee in employees">
-        <td>{{employee.firstname}}
-        </td>
-        <td>{{employee.lastname}}
-        </td>
-        <td>{{employee.email}}
-        </td>
-        <td>{{employee.phone}}
-        </td>
-        <td>
-            <input type="button" value="Remove" class="btn btn-primary" ng-click="removeEmployee(employee.id)" />
-        </td>
-    </tr>
-</table>
 
 
 
-
-<table class="table">
-    <tr>
-        <th>First Name
-        </th>
-        <th>Last Name
-        </th>
-        <th>Email
-        </th>
-        <th>Phone
-        </th>
-    </tr>
-    <tr ng-repeat="request in requests">
-        <td>{{request.firstname}}
-        </td>
-        <td>{{request.lastname}}
-        </td>
-        <td>{{request.email}}
-        </td>
-        <td>{{request.phone}}
-        </td>
-        <td>
-            <input type="button" value="Remove" class="btn btn-primary" ng-click="removeRequest(request.id)" />
-        </td>
-    </tr>
-</table>
+    <table class="table">
+        <tr>
+            <div class="request" <p>Request</p>
+            </div>
+            <th>Firstname
+            </th>
+            <th>Lastname
+            </th>
+            <th>Email
+            </th>
+            <th>Phone
+            </th>
+        </tr>
+        <tr ng-repeat="request in requests">
+            <td>{{request.firstname}}
+            </td>
+            <td>{{request.lastname}}
+            </td>
+            <td>{{request.email}}
+            </td>
+            <td>{{request.phone}}
+            </td>
+            <td>
+                <input type="button" value="Remove" class="btn btn-primary" ng-click="removeRequest(request.id)" />
+            </td>
+        </tr>
+    </table>
+</div>
