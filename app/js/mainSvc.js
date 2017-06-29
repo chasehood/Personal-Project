@@ -68,4 +68,5 @@ angular.module('tacoShopSanMarcos').service('mainSvc', function ($http, config) 
             return response.data
         })
     };
+    
 })

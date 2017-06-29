@@ -1,6 +1,6 @@
 angular.module('tacoShopSanMarcos').controller('adminCtrl', function ($scope, mainSvc) {
+    // this sends new employee info to db and returns updated table
     $scope.getEmployee = (info) => {
-        // this sends new employee info to db and returns updated table
         mainSvc.newEmployee(info).then(res => {
             console.log(res)
             $scope.getAllEmployees()
@@ -37,19 +37,6 @@ angular.module('tacoShopSanMarcos').controller('adminCtrl', function ($scope, ma
             $scope.requests = res
         })
     };
-      $scope.getAllCaterRequests();
-
-
-
-
-
-
-
-
-//     $scope.areYouSure(){
-//     alert("Are you sure you want to delete this?")
-// }
-
-
+    $scope.getAllCaterRequests();
 
 })

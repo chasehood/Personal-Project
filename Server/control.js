@@ -1,5 +1,3 @@
-
-
 module.exports = {
     // For customer to enter info
     createRequest: function (req, res) {
@@ -118,13 +116,4 @@ module.exports = {
             res.status(500).send(err)
         })
     },
-    // for admin to update employees
-    //       updateEmployee: function (req, res) {
-    //     req.app.get('db').update_employee([req.params.id, req.body.description]).then(function (response) {
-    //       res.send('Updated employee.' + response)
-    //     }).catch(function (err) {
-    //         console.log(err)
-    //       res.status(500).send(err)
-    //     })
-    //   },
 }

@@ -5,11 +5,12 @@ angular.module('tacoShopSanMarcos').controller('mainCtrl', function ($scope, mai
             console.log(res)
         })
     };
+    // this is for current temp.
         mainSvc.getWeather().then(function (response) {
             $scope.temps = response.data.main.temp.toFixed(0)
-            
-            console.log($scope.temps)
+            // console.log($scope.temps)
         })
+ 
 })
 
 
