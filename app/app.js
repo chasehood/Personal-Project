@@ -16,7 +16,8 @@ angular.module('tacoShopSanMarcos', ['ui.router'])
             })
             .state('catering', {
                 url: '/catering',
-                templateUrl: "./views/catering.html"
+                templateUrl: "./views/catering.html",
+                controller: "mainCtrl"
             })
             .state('admin', {
                 url: '/admin',

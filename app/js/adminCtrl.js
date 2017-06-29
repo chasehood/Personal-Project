@@ -25,6 +25,7 @@ angular.module('tacoShopSanMarcos').controller('adminCtrl', function ($scope, ma
     // this displays all the catering requests on the admin pages
     $scope.getAllCaterRequests = () => {
         mainSvc.allCaterRequests().then(res => {
+            // console.log(res)
             $scope.requests = res
         })
     };

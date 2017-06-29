@@ -10,6 +10,7 @@ angular.module('tacoShopSanMarcos').service('mainSvc', function ($http, config) 
             })
         },
     this.newRequest = (customer) => {
+        console.log(customer)
         return $http({
                 url: '/api/catering/submit-request',
                 method: 'POST',

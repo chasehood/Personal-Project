@@ -27,15 +27,15 @@ app.use(passport.session())
 
 //this is for auth0
 
-// massive({
-//     host: 'localhost',
-//     port: 5432,
-//     database: 'Personal Project',
-//     user: 'postgres',
+massive({
+    host: 'localhost',
+    port: 5432,
+    database: 'Personal Project',
+    user: 'postgres',
 
-// }).then(db => {
-//     app.set('db', db)
-// }).catch(err => console.log("DB Err: ", err))
+}).then(db => {
+    app.set('db', db)
+}).catch(err => console.log("DB Err: ", err))
 
 passport.use(new Auth0Strategy({
         domain: config.domain,
