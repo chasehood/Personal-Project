@@ -1,16 +1,21 @@
-angular.module('tacoShopSanMarcos').service('mainSvc', function ($http) {
-    
-    this.getWeather = function() {
-        return $http.get('https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20from%20weather.forecast%20where%20woeid%20%3D%202477080&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys')
-    }
+angular.module('tacoShopSanMarcos').service('mainSvc', function ($http, config) {
 
+    this.getWeather = function () {
+        return $http({
+                url: `http://api.openweathermap.org/data/2.5/weather?q=Provo&units=imperial&appid=${config.weatherAPI}`,
+                header: {
+                    'Access-Control-Allow-Origin': '*'
+                },
+                method: "GET"
+            })
+        },
     this.newRequest = (customer) => {
         return $http({
-            url: '/api/catering/submit-request',
-            method: 'POST',
-            data: customer
-        })
-    };
+                url: '/api/catering/submit-request',
+                method: 'POST',
+                data: customer
+            })
+        };
     this.newEmployee = (info) => {
         return $http({
             url: '/api/admin/create-user',

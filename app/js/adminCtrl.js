@@ -53,10 +53,3 @@ angular.module('tacoShopSanMarcos').controller('adminCtrl', function ($scope, ma
 
 
 })
-
-
-
-
-
-
-

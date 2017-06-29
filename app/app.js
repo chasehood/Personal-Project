@@ -1,26 +1,26 @@
-angular.module('tacoShopSanMarcos',['ui.router'])
+angular.module('tacoShopSanMarcos', ['ui.router'])
 
-.config(function($stateProvider, $urlRouterProvider) {
-    
-    $urlRouterProvider.when('','/')
+    .config(function ($stateProvider, $urlRouterProvider) {
 
-    $stateProvider
-    .state('home', {
-        url: '/',
-        templateUrl: "./views/home.html",
-        controller: 'mainCtrl'
+        $urlRouterProvider.when('', '/')
+
+        $stateProvider
+            .state('home', {
+                url: '/',
+                templateUrl: "./views/home.html",
+                controller: 'mainCtrl'
+            })
+            .state('menu', {
+                url: '/menu',
+                templateUrl: "./views/menu.html"
+            })
+            .state('catering', {
+                url: '/catering',
+                templateUrl: "./views/catering.html"
+            })
+            .state('admin', {
+                url: '/admin',
+                templateUrl: './views/admin.html',
+                controller: 'adminCtrl'
+            })
     })
-     .state('menu', {
-        url: '/menu',
-        templateUrl: "./views/menu.html"
-    })
-     .state('catering', {
-        url: '/catering',
-        templateUrl: "./views/catering.html"
-    })
-    .state('admin', {
-        url: '/admin',
-        templateUrl: './views/admin.html',
-        controller: 'adminCtrl'
-    })
-})

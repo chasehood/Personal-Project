@@ -1,5 +1,4 @@
-// var app = require("./index.js")
-// var db = app.get("db")
+
 
 module.exports = {
     // For customer to enter info
