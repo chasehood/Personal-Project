@@ -10,10 +10,10 @@ angular.module('tacoShopSanMarcos').controller('mainCtrl', function ($scope, mai
         })
     };
     // this is for current temp.
-        // mainSvc.getWeather().then(function (response) {
-        //     $scope.temps = response.data.main.temp.toFixed(0)
-        //     // console.log($scope.temps)
-        // })
+        mainSvc.getWeather().then(function (response) {
+            $scope.temps = response.data.main.temp.toFixed(0)
+            // console.log($scope.temps)
+        })
  
 })
 

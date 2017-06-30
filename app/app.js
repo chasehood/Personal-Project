@@ -24,4 +24,8 @@ angular.module('tacoShopSanMarcos', ['ui.router'])
                 templateUrl: './views/admin.html',
                 controller: 'adminCtrl'
             })
+             .state('auth', {
+                url: '/auth',
+                controller: 'adminCtrl'
+            })
     })
