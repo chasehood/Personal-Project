@@ -11,28 +11,32 @@ const express = require('express'),
 
 //these are the middlewares
 
-app.use(express.static(`${__dirname}./../app`));
+app.use(express.static(`${__dirname}/../app`));
 app.use(bodyParser.json());
 app.use(cors());
 app.use(session({
     resave: true,
     saveUninitialized: true,
-    secret: 'Bandersnatch'
+    secret: 'iliketurtles'
 }))
 app.use(passport.initialize())
 app.use(passport.session())
 
 
-
+let db;
 massive({
     host: 'localhost',
     port: 5432,
     database: 'Personal Project',
     user: 'postgres',
-    password: config.postgrespw
+    // password: config.postgrespw,
+    scripts: __dirname + '/Personal-Project/Server/db'
 
-}).then(db => {
-    app.set('db', db)
+}).then(dbinstance => {
+    app.set('db', dbinstance)
+    db = dbinstance
+    db.tables.forEach(table => console.log(table.name));
+    
 }).catch(err => console.log("DB Err: ", err))
 
 
@@ -45,22 +49,27 @@ passport.use(new Auth0Strategy({
         domain: config.domain,
         clientID: config.clientID,
         clientSecret: config.clientSecret,
-        callbackURL: '/auth/callback'
+        callbackURL: 'http://localhost:3000/auth/callback'
+
     },
  function(accessToken, refreshToken, extraParams, profile, done) {
    //Find user in database
-   db.getUserByAuthId([profile.id], function(err, user) {
+   db.run(`select * from users where authid = '${profile.id}'`).then(user => {
      user = user[0];
      if (!user) { //if there isn't one, we'll create one!
        console.log('CREATING USER');
-       db.createUserByAuth([profile.displayName, profile.id], function(err, user) {
+       db.run(`insert into users (username, authid) values ('${profile.displayName}', '${profile.id}') returning username, authid;`)
+       .then((user) => {
          console.log('USER CREATED', userA);
          return done(err, user[0]); // GOES TO SERIALIZE USER
        })
      } else { //when we find the user, return it
        console.log('FOUND USER', user);
-       return done(err, user);
+       return done(null, user);
      }
+   })
+   .catch(err => {
+       return done(err, null);
    })
  }
 ));
@@ -76,20 +85,11 @@ passport.serializeUser(function(userA, done) {
 
 //USER COMES FROM SESSION - THIS IS INVOKED FOR EVERY ENDPOINT
 passport.deserializeUser(function(userB, done) {
- var userC = userC;
+//  var userC = userC;
  //Things you might do here :
    // Query the database with the user id, get other information to put on req.user
- done(null, userC); //PUTS 'USER' ON REQ.USER
+ done(null, userB); //PUTS 'USER' ON REQ.USER
 });
-
-
-
-
-
-
-
-
-
 
 
 app.get('/auth/me', function(req, res) {
@@ -105,10 +105,10 @@ app.get('/auth/logout', function(req, res) {
 
 app.get('/auth', passport.authenticate('auth0'))
 app.get('/auth/callback', passport.authenticate('auth0', {
-    successRedirect: '/'
+    successRedirect: '/#!/'
 }), (req, res, next) => {
-    console.log(req.user)
-}), 
+    console.log()
+})
 
 
 //  These are my endpoints
