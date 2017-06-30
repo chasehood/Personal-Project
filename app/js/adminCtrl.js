@@ -4,6 +4,10 @@ angular.module('tacoShopSanMarcos').controller('adminCtrl', function ($scope, ma
         mainSvc.newEmployee(info).then(res => {
             console.log(res)
             $scope.getAllEmployees()
+            $scope.employee.firstname = ""
+            $scope.employee.lastname = ""
+            $scope.employee.email = ""
+            $scope.employee.phone = ""
         })
     };
 
