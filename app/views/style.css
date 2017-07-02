@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Bungee+Shade');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Hairline');
 * {
     /*border: 1px solid black;*/
-    line-height: 1px;
+    /*line-height: 1px;*/
 }
 
 .skyline {
@@ -20,13 +21,16 @@
 }
 
 .ts,
-.tabs {
+.tabs,
+a {
+    word-spacing: 1%;
     color: #C12C42;
-    font-size: 0.3em
+    font-size: 28%;
+    text-decoration: none;
 }
 
 .sm {
-    font-size: 2em;
+    font-size: 191%;
     color: #024467;
 }
 
@@ -39,7 +43,7 @@
 .tabs {
     word-spacing: 1em;
     margin: 0 auto;
-    width: 50%;
+    width: 70%;
     display: flex;
     justify-content: space-between;
     ;
@@ -87,7 +91,7 @@ iframe {
 }
 
 .wrapper {
-    background-color: rgba(255, 255, 255, 0.65);
+    background-color: rgba(255, 255, 255, 0.8);
     margin: 0 auto;
 }
 
@@ -96,4 +100,61 @@ iframe {
     display: flex;
     justify-content: center;
     height: 0;
+}
+
+.review-container {
+    display: flex;
+    justify-content: center;
+}
+
+.reviews {
+    opacity: 0.8;
+    width: 90%;
+    margin: 9% auto;
+    height: 70%;
+}
+
+.about-container,
+.taco-weather,
+.cater-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 90%;
+}
+
+.about,
+.temp,
+.cater-info {
+    color: #024467;
+    font-family: 'Bungee Hairline', cursive;
+    margin-left: 5%;
+    font-size: 78%;
+    text-align: justify;
+    line-height: normal;
+}
+
+.admin {
+    color: #3a718c;
+    opacity: 0.3;
+    position: fixed;
+    bottom: 2%;
+}
+
+@media (min-width: 768px) {
+    .ts{
+        font-size: 3em;
+    }
+    .ts,
+    .tabs,
+    a {
+        font-size: 79%;
+    }
+     .ts,
+    .tabs,
+         {
+        margin: 5% 0 5% 0;
+    }
+.sm{
+    font-size: 415%;
+}
+
 }

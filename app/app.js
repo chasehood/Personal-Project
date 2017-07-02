@@ -28,4 +28,8 @@ angular.module('tacoShopSanMarcos', ['ui.router'])
                 url: '/auth',
                 controller: 'adminCtrl'
             })
+            .state('mapa', {
+                url: '/auth',
+                controller: 'adminCtrl'
+            })
     })
