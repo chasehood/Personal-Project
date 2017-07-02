@@ -100,12 +100,12 @@ app.get('/auth/me', function(req, res) {
 
 app.get('/auth/logout', function(req, res) {
  req.logout();
- res.redirect('/');
+ res.redirect('/admin');
 })
 
 app.get('/auth', passport.authenticate('auth0'))
 app.get('/auth/callback', passport.authenticate('auth0', {
-    successRedirect: '/#!/'
+    successRedirect: '/#!/admin'
 }), (req, res, next) => {
     console.log()
 })

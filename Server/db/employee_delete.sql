@@ -1,2 +1,2 @@
-delete from admin 
+delete from employee 
 where id = $1
