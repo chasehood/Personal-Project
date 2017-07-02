@@ -56,16 +56,26 @@ h1 {
     justify-content: space-around;
     margin: 13px auto;
 }
-
+.employee-title,
+.request-title,
 .table,
-.input-container {
+.input-container,
+.input-cater {
     color: #024467;
     padding: 8px;
-    width: 33%;
+    width: 70%;
     margin: 0 auto;
     font-family: Courier New, Courier, monospace;
     font-weight: bolder;
-    font-size: 0.4em;
+    font-size: 59%;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+input {
+    background-color: #024467;
+    color: #F5B055;
 }
 
 th {
@@ -77,6 +87,9 @@ th,
 td {
     /*border: 1px solid black;*/
     width: 75%;
+}
+td{
+    border-bottom: 1px solid black;
 }
 
 .menu {
@@ -93,6 +106,10 @@ iframe {
 .wrapper {
     background-color: rgba(255, 255, 255, 0.8);
     margin: 0 auto;
+}
+
+button {
+    cursor: pointer;
 }
 
 .employee,
@@ -138,23 +155,95 @@ iframe {
     position: fixed;
     bottom: 2%;
 }
+.request-title,
+.employee-title {
+    background-color: #C12C42;
+    color: #f5b055;
+    text-align: center;
+    font-family: Courier New, Courier;
+}
 
 @media (min-width: 768px) {
-    .ts{
-        font-size: 3em;
+    .ts {
+        font-size: 140%;
     }
-    .ts,
     .tabs,
     a {
         font-size: 79%;
     }
-     .ts,
+    .ts,
     .tabs,
-         {
+    {
         margin: 5% 0 5% 0;
     }
-.sm{
-    font-size: 415%;
+    .sm {
+        font-size: 415%;
+    }
+    .about,
+    .temp,
+    .cater-info {
+        font-size: 187%;
+    }
+    .employee-title,
+    .request-title,
+    .table,
+    .input-container {
+        width: 90%;
+        font-size: 91%;
+    }
+    .input-cater {
+        font-size: 170%;
+    }
 }
 
+@media (min-width: 1336px) {
+    .ts {
+        font-size: 200%;
+    }
+    .tabs,
+    a {
+        font-size: 96%;
+    }
+    .ts,
+    .tabs,
+    {
+        margin: 5% 0 5% 0;
+    }
+   
+   .about-container, .taco-weather, .cater-container {
+    margin-left: 25%;
+    width: 50%;
+   }
+
+    .about,
+    .temp,
+    .cater-info {
+        width: 90%;
+        font-size: 187%;
+    }
+    .table,
+    .input-container {
+        width: 90%;
+        font-size: 91%;
+    }
+    .input-cater {
+        font-size: 170%;
+    }
+    .reviews {
+        width: 50%;
+    }
+    .tabs {
+        width: 50%;
+    }
+    .employee-title,
+    .request-title,
+     .table,
+    .input-container {
+        font-size: 190%;
+    }
+     .table,
+    .input-container {
+        width: 50%;
+    }
+    
 }
