@@ -7,6 +7,7 @@ const express = require('express'),
     controller = require('./control'),
     passport = require('passport'),
     Auth0Strategy = require('passport-auth0'),
+    cool = require('cool-ascii-faces'),
     config = require('./config');
 
 //these are the middlewares
@@ -36,7 +37,7 @@ massive({
     app.set('db', dbinstance)
     db = dbinstance
     db.tables.forEach(table => console.log(table.name));
-    
+
 }).catch(err => console.log("DB Err: ", err))
 
 
@@ -52,55 +53,55 @@ passport.use(new Auth0Strategy({
         callbackURL: 'http://localhost:3000/auth/callback'
 
     },
- function(accessToken, refreshToken, extraParams, profile, done) {
-   //Find user in database
-   db.run(`select * from users where authid = '${profile.id}'`).then(user => {
-     user = user[0];
-     if (!user) { //if there isn't one, we'll create one!
-       console.log('CREATING USER');
-       db.run(`insert into users (username, authid) values ('${profile.displayName}', '${profile.id}') returning username, authid;`)
-       .then((user) => {
-         console.log('USER CREATED', userA);
-         return done(err, user[0]); // GOES TO SERIALIZE USER
-       })
-     } else { //when we find the user, return it
-       console.log('FOUND USER', user);
-       return done(null, user);
-     }
-   })
-   .catch(err => {
-       return done(err, null);
-   })
- }
+    function (accessToken, refreshToken, extraParams, profile, done) {
+        //Find user in database
+        db.run(`select * from users where authid = '${profile.id}'`).then(user => {
+                user = user[0];
+                if (!user) { //if there isn't one, we'll create one!
+                    console.log('CREATING USER');
+                    db.run(`insert into users (username, authid) values ('${profile.displayName}', '${profile.id}') returning username, authid;`)
+                        .then((user) => {
+                            console.log('USER CREATED', userA);
+                            return done(err, user[0]); // GOES TO SERIALIZE USER
+                        })
+                } else { //when we find the user, return it
+                    console.log('FOUND USER', user);
+                    return done(null, user);
+                }
+            })
+            .catch(err => {
+                return done(err, null);
+            })
+    }
 ));
 
 //THIS IS INVOKED ONE TIME TO SET THINGS UP
-passport.serializeUser(function(userA, done) {
- console.log('serializing', userA);
- var userB = userA;
- //Things you might do here :
-  //Serialize just the id, get other information to add to session,
- done(null, userB); //PUTS 'USER' ON THE SESSION
+passport.serializeUser(function (userA, done) {
+    console.log('serializing', userA);
+    var userB = userA;
+    //Things you might do here :
+    //Serialize just the id, get other information to add to session,
+    done(null, userB); //PUTS 'USER' ON THE SESSION
 });
 
 //USER COMES FROM SESSION - THIS IS INVOKED FOR EVERY ENDPOINT
-passport.deserializeUser(function(userB, done) {
-//  var userC = userC;
- //Things you might do here :
-   // Query the database with the user id, get other information to put on req.user
- done(null, userB); //PUTS 'USER' ON REQ.USER
+passport.deserializeUser(function (userB, done) {
+    //  var userC = userC;
+    //Things you might do here :
+    // Query the database with the user id, get other information to put on req.user
+    done(null, userB); //PUTS 'USER' ON REQ.USER
 });
 
 
-app.get('/auth/me', function(req, res) {
- if (!req.user) return res.sendStatus(404);
- //THIS IS WHATEVER VALUE WE GOT FROM userC variable above.
- res.status(200).send(req.user);
+app.get('/auth/me', function (req, res) {
+    if (!req.user) return res.sendStatus(404);
+    //THIS IS WHATEVER VALUE WE GOT FROM userC variable above.
+    res.status(200).send(req.user);
 })
 
-app.get('/auth/logout', function(req, res) {
- req.logout();
- res.redirect('/admin');
+app.get('/auth/logout', function (req, res) {
+    req.logout();
+    res.redirect('/admin');
 })
 
 app.get('/auth', passport.authenticate('auth0'))
@@ -123,8 +124,10 @@ app.delete('/api/admin/remove-employee/:id', controller.removeEmployee)
 app.delete('/api/admin/remove-request/:id', controller.removeRequest)
 
 
-// this is for my port
-const port = 3000;
-app.listen(port, () => {
-    console.log('Listening on port: ', port);
-})
+    // this is for my port
+    // const port = 3000;
+    // app.listen(port, () => {
+    //     console.log('Listening on port: ', port);
+    // })
+
+    .listen(process.env.PORT || 5000)
