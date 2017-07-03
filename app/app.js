@@ -24,12 +24,12 @@ angular.module('tacoShopSanMarcos', ['ui.router'])
                 templateUrl: './views/admin.html',
                 controller: 'adminCtrl'
             })
-             .state('auth', {
+            .state('auth', {
                 url: '/auth',
                 controller: 'adminCtrl'
             })
             .state('mapa', {
-                url: '/auth',
+                url: '../views/mapa.html',
                 controller: 'adminCtrl'
             })
     })
