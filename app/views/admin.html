@@ -1,10 +1,10 @@
 <section class="input-container">
     <form ng-submit="getEmployee(employee)">
-        <input type="text" placeholder="Employee firstname" ng-model="employee.firstname">
-        <input type="text" placeholder="Employee lastname" ng-model="employee.lastname">
-        <input type="text" placeholder="Employee email" ng-model="employee.email">
-        <input type="text" placeholder="Employee 5555555555" ng-model="employee.phone">
-        <button type="submit">add employee</button>
+        <input type="text" placeholder="Firstname" ng-model="employee.firstname">
+        <input type="text" placeholder="Lastname" ng-model="employee.lastname">
+        <input type="text" placeholder="Email" ng-model="employee.email">
+        <input type="text" placeholder="5555555555" ng-model="employee.phone">
+        <button type="submit">Add employee</button>
     </form>
 </section>
 <div class="wrapper">
@@ -25,16 +25,16 @@
             </th>
         </tr>
         <tr ng-repeat="employee in employees">
-            <td>{{employee.firstname}}
+            <td><u>{{employee.firstname}}</u>
             </td>
-            <td>{{employee.lastname}}
+            <td>|<u>{{employee.lastname}}</u>
             </td>
-            <td>{{employee.email}}
+            <td>|<u>{{employee.email}}</u>
             </td>
-            <td>{{employee.phone}}
+            <td>|<u>{{employee.phone}}</u>
             </td>
             <td>
-                <input type="button" value="Remove" class="btn btn-primary" ng-click="removeEmployee(employee.id)" />
+                <input type="button" value="Remove" class="btn-btn-primary" ng-click="removeEmployee(employee.id)" />
             </td>
         </tr>
     </table>
@@ -46,9 +46,9 @@
         <tr>
             <div class="request" 
             </div>
-            <th>Firstname
+            <th>First
             </th>
-            <th>Lastname
+            <th>Last
             </th>
             <th>Email
             </th>
@@ -56,16 +56,16 @@
             </th>
         </tr>
         <tr ng-repeat="request in requests">
-            <td>{{request.firstname}}
+            <td><u>{{request.firstname}}</u>
             </td>
-            <td>{{request.lastname}}
+            <td>|<u>{{request.lastname}}</u>
             </td>
-            <td>{{request.email}}
+            <td>|<u>{{request.email}}</u>
             </td>
-            <td>{{request.phone}}
+            <td>|<u>{{request.phone}}</u>
             </td>
             <td>
-                <input type="button" value="Remove" class="btn btn-primary" ng-click="removeRequest(request.id)" />
+                <input type="button" value="Remove" class="btn-btn-primary" ng-click="removeRequest(request.id)" />
             </td>
         </tr>
     </table>

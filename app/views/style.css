@@ -56,6 +56,7 @@ h1 {
     justify-content: space-around;
     margin: 13px auto;
 }
+
 .employee-title,
 .request-title,
 .table,
@@ -73,9 +74,17 @@ h1 {
     /*background-color: rgba(255, 255, 255, 0.8);*/
 }
 
+.btn-btn-primary{
+    background-color: #C12C42;
+}
+
 input {
-    background-color: #024467;
-    color: #F5B055;
+    background-color: #06769B;
+    color: #024467;
+}
+
+input::placeholder {
+    color: #024467;
 }
 
 th {
@@ -87,9 +96,6 @@ th,
 td {
     /*border: 1px solid black;*/
     width: 75%;
-}
-td{
-    border-bottom: 1px solid black;
 }
 
 .menu {
@@ -104,12 +110,9 @@ iframe {
 }
 
 .wrapper {
+    width: 70%;
     background-color: rgba(255, 255, 255, 0.8);
     margin: 0 auto;
-}
-
-button {
-    cursor: pointer;
 }
 
 .employee,
@@ -155,12 +158,25 @@ button {
     position: fixed;
     bottom: 2%;
 }
+
 .request-title,
 .employee-title {
-    background-color: #C12C42;
+    background-color: #024467;
     color: #f5b055;
     text-align: center;
     font-family: Courier New, Courier;
+}
+
+.map {
+    width: 68%;
+    position: absolute;
+    margin-left: 16%;
+}
+
+button {
+    cursor: pointer;
+    background-color: #024467;
+    color: #f5b055;
 }
 
 @media (min-width: 768px) {
@@ -209,12 +225,12 @@ button {
     {
         margin: 5% 0 5% 0;
     }
-   
-   .about-container, .taco-weather, .cater-container {
-    margin-left: 25%;
-    width: 50%;
-   }
-
+    .about-container,
+    .taco-weather,
+    .cater-container {
+        margin-left: 25%;
+        width: 50%;
+    }
     .about,
     .temp,
     .cater-info {
@@ -235,16 +251,22 @@ button {
     .tabs {
         width: 50%;
     }
-    .employee-title,
-    .request-title,
-     .table,
+    .table,
     .input-container {
-        width: 50%;
+        width: 56%;
         font-size: 190%;
     }
-     .table,
-    .input-container {
-        width: 50%;
+    .map {
+        width: 48%;
+        margin-left: 26%;
     }
-    
+    .employee-title,
+    .request-title {
+        width: 67%;
+        font-size: 190%;
+    }
+    .menu {
+        width: 51%;
+        margin-left: 24.5%;
+    }
 }

@@ -29,7 +29,8 @@ angular.module('tacoShopSanMarcos', ['ui.router'])
                 controller: 'adminCtrl'
             })
             .state('mapa', {
-                url: '../views/mapa.html',
+                url:'/mapa',
+                templateUrl: './views/mapa.html',
                 controller: 'adminCtrl'
             })
     })
