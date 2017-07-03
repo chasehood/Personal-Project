@@ -34,7 +34,7 @@
             <td>|<u>{{employee.phone}}</u>
             </td>
             <td>
-                <input type="button" value="Remove" class="btn-btn-primary" ng-click="removeEmployee(employee.id)" />
+                <input type="button" value="X" class="btn-btn-primary" ng-click="removeEmployee(employee.id)" />
             </td>
         </tr>
     </table>
@@ -65,7 +65,11 @@
             <td>|<u>{{request.phone}}</u>
             </td>
             <td>
-                <input type="button" value="Remove" class="btn-btn-primary" ng-click="removeRequest(request.id)" />
+
+                <!--<i class="fa fa-trash-o" aria-hidden="true" ></i>-->
+
+                <!--<input class="fa fa-trash-o" ng-click="removeRequest(request.id)" />-->
+                <input type="button" value="X" class="btn-btn-primary" ng-click="removeRequest(request.id)" />
             </td>
         </tr>
     </table>

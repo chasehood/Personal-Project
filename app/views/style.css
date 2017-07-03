@@ -64,7 +64,7 @@ h1 {
 .input-cater {
     color: #024467;
     padding: 8px;
-    width: 70%;
+    width: 96%;
     margin: 0 auto;
     font-family: Courier New, Courier, monospace;
     font-weight: bolder;
@@ -74,8 +74,16 @@ h1 {
     /*background-color: rgba(255, 255, 255, 0.8);*/
 }
 
-.btn-btn-primary{
-    background-color: #C12C42;
+.btn-btn-primary,
+button
+{
+    background-color: #C12C42; /* Green */
+    border: none;
+    color: #024467;
+    /*padding: 15px 32px;*/
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
 }
 
 input {
@@ -202,10 +210,13 @@ button {
     }
     .employee-title,
     .request-title,
-    .table,
-    .input-container {
+    .table{
         width: 90%;
         font-size: 91%;
+    }
+    .input-container{
+        font-size: 91%;
+        width: 62%;
     }
     .input-cater {
         font-size: 170%;
@@ -253,7 +264,7 @@ button {
     }
     .table,
     .input-container {
-        width: 56%;
+        width: 44%;
         font-size: 190%;
     }
     .map {
@@ -262,7 +273,7 @@ button {
     }
     .employee-title,
     .request-title {
-        width: 67%;
+        width: 97%;
         font-size: 190%;
     }
     .menu {

@@ -7,7 +7,6 @@ const express = require('express'),
     controller = require('./control'),
     passport = require('passport'),
     Auth0Strategy = require('passport-auth0'),
-    cool = require('cool-ascii-faces'),
     config = require('./config');
 
 //these are the middlewares
@@ -125,9 +124,9 @@ app.delete('/api/admin/remove-request/:id', controller.removeRequest)
 
 
     // this is for my port
-    // const port = 3000;
-    // app.listen(port, () => {
-    //     console.log('Listening on port: ', port);
-    // })
+    const port = 3000;
+    app.listen(port, () => {
+        console.log('Listening on port: ', port);
+    })
 
-    .listen(process.env.PORT || 5000)
+    // .listen(process.env.PORT || 5000)
