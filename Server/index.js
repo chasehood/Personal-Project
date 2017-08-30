@@ -11,7 +11,7 @@ const express = require('express'),
 
 //these are the middlewares
 
-app.use(express.static(__dirname +'../appgit add'));
+app.use(express.static(__dirname +'../app'));
 app.use(bodyParser.json());
 app.use(cors());
 app.use(session({
