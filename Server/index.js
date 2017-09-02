@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express'),
     session = require('express-session'),
     bodyParser = require('body-parser'),
@@ -23,24 +24,27 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 
-let db;
-massive({
-    host: 'localhost',
-    port: 5432,
-    database: 'Personal Project',
-    user: 'postgres',
-    // password: config.postgrespw,
-    scripts: __dirname + '/Personal-Project/Server/db'
+// let db;
+// massive({
+//     host: 'ec2-54-163-227-202.compute-1.amazonaws.com',
+//     port: 5432,
+//     database: 'd504q8e1ois73v',
+//     user: 'jvzeizzkelnlsh',
+//     password: config.postgrespw,
+//     scripts: __dirname + '/Personal-Project/Server/db'
 
-}).then(dbinstance => {
-    app.set('db', dbinstance)
-    db = dbinstance
-    db.tables.forEach(table => console.log(table.name));
+// }).then(dbinstance => {
+//     app.set('db', dbinstance)
+//     db = dbinstance
+//     db.tables.forEach(table => console.log(table.name));
 
-}).catch(err => console.log("DB Err: ", err))
+// }).catch(err => console.log("DB Err: ", err))
 
 
-
+console.log(process.env)
+massive(process.env.DB).then(db => {
+  app.set('db', db);
+})
 
 //this is for auth0
 
