@@ -75,9 +75,9 @@ h1 {
 }
 
 .btn-btn-primary,
-button {
-    background-color: #C12C42;
-    /* Green */
+button
+{
+    background-color: #C12C42; /* Green */
     border: none;
     color: #024467;
     /*padding: 15px 32px;*/
@@ -210,23 +210,16 @@ button {
     }
     .employee-title,
     .request-title,
-    .table {
+    .table{
         width: 90%;
         font-size: 91%;
     }
-    .input-container {
+    .input-container{
         font-size: 91%;
         width: 62%;
     }
     .input-cater {
         font-size: 170%;
-    }
-    .about-container,
-    .taco-weather,
-    .cater-container {
-        background-color: rgba(255, 255, 255, 0.8);
-        width: 69%;
-        margin-left: 14.5%;
     }
 }
 
