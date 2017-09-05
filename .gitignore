@@ -1,3 +1,3 @@
-/Users/CHASE/Desktop/DevMtn/projects/personal_Project/Personal-Project/node_modules
-/configure.js
-/Users/CHASE/Desktop/DevMtn/projects/personal_Project/Personal-Project/server/config.js
+**/node_modules/
+server/config.js
+configure.js
