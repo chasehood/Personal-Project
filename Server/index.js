@@ -4,15 +4,15 @@ const express = require('express'),
     bodyParser = require('body-parser'),
     cors = require('cors'),
     massive = require('massive'),
-    app = module.exports = express(),
     controller = require('./control'),
     passport = require('passport'),
     Auth0Strategy = require('passport-auth0'),
     config = require('./config');
+    app = module.exports = express(),
 
 //these are the middlewares
 
-app.use(express.static(__dirname +'../app'));
+app.use(express.static(`${__dirname}/../app`));
 app.use(bodyParser.json());
 app.use(cors());
 app.use(session({
