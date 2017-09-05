@@ -1,4 +1,4 @@
-angular.module('tacoShopSanMarcos', ['ui.router'])
+iangular.module('tacoShopSanMarcos', ['ui.router'])
     .config(function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.when('', '/')
         $stateProvider
