@@ -2,6 +2,6 @@
 /Server/node_modules
 /app/js/configure.js
 /Server/.env
-
+node_modules
 
 
