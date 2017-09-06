@@ -1,4 +1,7 @@
-/server/config.js
-/server/node_modules
+/Server/config.js
+/Server/node_modules
 /app/js/configure.js
-/server/.env
+/Server/.env
+
+
+
